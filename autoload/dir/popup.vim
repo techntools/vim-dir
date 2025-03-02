@@ -17,7 +17,7 @@ export def YesNo(text: any, DialogCallback: func)
     else
         msg += text
     endif
-    var winid = popup_dialog(msg + ["", "yes  |  no"], {
+    var winid = popup_dialog(msg + ["", "Yes  |  No"], {
         filter: 'popup_filter_yesno',
         pos: 'center',
         border: [],
@@ -34,10 +34,10 @@ export def YesNo(text: any, DialogCallback: func)
         win_execute(winid, $":call setline(line('$') - 1, repeat('─', {winwidth(winid)}))")
         win_execute(winid, $":%cen {winwidth(winid)}")
 
-        hi def dirActionChar cterm=reverse,bold,underline gui=reverse,bold,underline
-        win_execute(winid, $"syn match YesNo 'yes  \\|  no' transparent contains=Yes,No")
-        win_execute(winid, $"syn match Yes '\\zsy\\zees' contained | hi def link Yes DirActionChar")
-        win_execute(winid, $"syn match No '\\zsn\\zeo' contained | hi def link No DirActionChar")
+        hi def dirActionChar cterm=reverse,bold gui=reverse,bold
+        win_execute(winid, $"syn match YesNo 'Yes  \\|  No' transparent contains=Yes,No")
+        win_execute(winid, $"syn match Yes '\\zsY\\zees' contained | hi def link Yes DirActionChar")
+        win_execute(winid, $"syn match No '\\zsN\\zeo' contained | hi def link No DirActionChar")
 enddef
 
 export def Show(text: any, title: string = '', Setup: func(number) = null_function): number
@@ -127,7 +127,7 @@ export def Confirm(text: any, answer: list<dict<any>>): number
     endif
     msg += [{text: ""}]
 
-    hi def dirActionChar cterm=reverse,bold,underline gui=reverse,bold,underline
+    hi def dirActionChar cterm=reverse,bold gui=reverse,bold
     if empty(prop_type_get('DirActionChar'))
         prop_type_add('DirActionChar', {highlight: 'dirActionChar'})
     endif
