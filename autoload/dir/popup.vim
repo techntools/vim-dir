@@ -105,13 +105,13 @@ enddef
 #   `answer` is a list of "buttons"
 # Example:
 #   var result = popup.Confirm("Override file?", [
-#           {text: "&yes",  act: 'y'},
-#           {text: "&no",   act: 'n'},
-#           {text: "&all",  act: 'a'},
-#           {text: "n&one", act: 'o'}
+#           {text: "&Yes",  act: 'y'},
+#           {text: "&No",   act: 'n'},
+#           {text: "&All",  act: 'a'},
+#           {text: "N&one", act: 'o'}
 #       ])
 #  if result == 0
-#      echo "yes"
+#      echo "Yes"
 #  ...
 # Returns -1 if Escape is pressed
 # Returns  0 if Enter is pressed
