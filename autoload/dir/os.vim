@@ -184,10 +184,10 @@ export def Copy()
                 var file_exists = filereadable(dst)
                 if file_exists && override_all == 0
                     var res = popup.Confirm(['Override existing', $'"{dst}"?'], [
-                                {text: "&yes", act: 'y'},
-                                {text: "&no", act: 'n'},
-                                {text: "yes to &all", act: 'a'},
-                                {text: "n&o to all", act: 'o'}
+                                {text: "&Yes", act: 'y'},
+                                {text: "&No", act: 'n'},
+                                {text: "Yes to &all", act: 'a'},
+                                {text: "N&o to all", act: 'o'}
                             ])
                     if res == 0
                         override = true
@@ -287,10 +287,10 @@ export def Move()
                 var file_exists = filereadable(dst)
                 if file_exists && override_all == 0
                     var res = popup.Confirm(['Override existing', $'"{dst}"?'], [
-                                {text: "&yes", act: 'y'},
-                                {text: "&no", act: 'n'},
-                                {text: "yes to &all", act: 'a'},
-                                {text: "n&o to all", act: 'o'}
+                                {text: "&Yes", act: 'y'},
+                                {text: "&No", act: 'n'},
+                                {text: "Yes to &all", act: 'a'},
+                                {text: "N&o to all", act: 'o'}
                             ])
                     if res == 0
                         override = true

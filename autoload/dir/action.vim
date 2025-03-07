@@ -242,7 +242,7 @@ export def DoCopy()
             msg = [$'Duplicate {cnt} {FileOrDirMsg(mark.List())} here?']
         endif
 
-        var res = popup.Confirm(msg, [{text: "&yes", act: 'y'}, {text: "&no", act: 'n'}])
+        var res = popup.Confirm(msg, [{text: "&Yes", act: 'y'}, {text: "&No", act: 'n'}])
         if res == 0
             var view = winsaveview()
             os.Duplicate()
@@ -255,7 +255,7 @@ export def DoCopy()
         else
             msg = [$'Copy {cnt} {FileOrDirMsg(mark.List())} here?']
         endif
-        var res = popup.Confirm(msg, [{text: "&yes", act: 'y'}, {text: "&no", act: 'n'}])
+        var res = popup.Confirm(msg, [{text: "&Yes", act: 'y'}, {text: "&No", act: 'n'}])
         if res == 0
             var view = winsaveview()
             os.Copy()
@@ -298,7 +298,7 @@ export def DoMove()
         msg = [$'Move {cnt} {FileOrDirMsg(mark.List())} here?']
     endif
 
-    var res = popup.Confirm(msg, [{text: "&yes", act: 'y'}, {text: "&no", act: 'n'}])
+    var res = popup.Confirm(msg, [{text: "&Yes", act: 'y'}, {text: "&No", act: 'n'}])
     if res == 0
         var view = winsaveview()
         os.Move()
@@ -533,7 +533,7 @@ export def BookmarkSet()
     if bookmark.Exists(name)
 
         var msg = [$'Bookmark "{name}" exists!', $'{bookmark.Get(name)}', 'Override?']
-        var res = popup.Confirm(msg, [{text: "&yes", act: 'y'}, {text: "&no", act: 'n'}])
+        var res = popup.Confirm(msg, [{text: "&Yes", act: 'y'}, {text: "&No", act: 'n'}])
         if res != 0
             return
         endif
